@@ -18,11 +18,30 @@ app.add_event_handler("startup", init_model)
 
 # class which is expected in the payload while training
 class TrainIn(BaseModel):
-    sepal_length: float
-    sepal_width: float
-    petal_length: float
-    petal_width: float
-    flower_class: str
+    p1: str= 'A11'
+    p2: int= 6
+    p3: str='A34'
+    p4: str='A43'
+    p5: int=1169
+    p6: str='A65'
+    p7: str='A75'
+    p8: int=4
+    p9: str='A93'
+    p10: str='A101'
+    p11: int=4
+    p12: str='A121'
+    p13: int=67
+    p14: str='A143'
+    p15: str='A152'
+    p16: int=2
+    p17: str='A173'
+    p18: int=1
+    p19: str='A192'
+    p20: str='A201'
+    loan:str='Bad'
+    
+class QueryOut(BaseModel):
+    loan: str
 
 
 # Route definitions
@@ -39,7 +58,7 @@ def ping():
 def train(data: List[TrainIn]):
     train_model(data)
     # tell predictr to reload the model
-    response = requests.post(f"{PREDICTR_ENDPOINT}/reload_model")
+   # response = requests.post(f"{PREDICTR_ENDPOINT}/reload_model")
     return {"detail": "Training successful"}
 
 
