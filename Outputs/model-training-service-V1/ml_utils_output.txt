@@ -1,0 +1,88 @@
+C:\Users\kgvrm\OneDrive\Desktop\DataScience\Program-B\CapstoneProject\model-training-service-V1\venv\Scripts\python.exe C:/Users/kgvrm/OneDrive/Desktop/DataScience/Program-B/CapstoneProject/model-training-service-V1/ml_utils.py
+:: loading settings :: url = jar:file:/C:/Spark/spark-3.1.2-bin-hadoop3.2/jars/ivy-2.4.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: C:\Users\kgvrm\.ivy2\cache
+The jars for the packages stored in: C:\Users\kgvrm\.ivy2\jars
+org.mongodb.spark#mongo-spark-connector_2.12 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-b3300868-c1f7-466d-bb8e-9c2ff2b54626;1.0
+	confs: [default]
+	found org.mongodb.spark#mongo-spark-connector_2.12;3.0.0 in central
+	found org.mongodb#mongodb-driver-sync;4.0.5 in central
+	found org.mongodb#bson;4.0.5 in central
+	found org.mongodb#mongodb-driver-core;4.0.5 in central
+:: resolution report :: resolve 654ms :: artifacts dl 39ms
+	:: modules in use:
+	org.mongodb#bson;4.0.5 from central in [default]
+	org.mongodb#mongodb-driver-core;4.0.5 from central in [default]
+	org.mongodb#mongodb-driver-sync;4.0.5 from central in [default]
+	org.mongodb.spark#mongo-spark-connector_2.12;3.0.0 from central in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   4   |   0   |   0   |   0   ||   4   |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-b3300868-c1f7-466d-bb8e-9c2ff2b54626
+	confs: [default]
+	0 artifacts copied, 4 already retrieved (0kB/69ms)
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+21/10/31 19:29:25 WARN Utils: Service 'SparkUI' could not bind on port 4040. Attempting port 4041.
+21/10/31 19:29:25 WARN Utils: Service 'SparkUI' could not bind on port 4041. Attempting port 4042.
+21/10/31 19:29:25 WARN Utils: Service 'SparkUI' could not bind on port 4042. Attempting port 4043.
+21/10/31 19:29:37 WARN ProcfsMetricsGetter: Exception when trying to compute pagesize, as a result reporting of ProcessTree metrics is stopped
++--------------+-----+
+|      category|count|
++--------------+-----+
+|        Sports|   50|
+| Entertainment|   50|
+|      Religion|   50|
+|         Crime|   50|
+|     Education|   50|
+|      Business|   50|
+|       Finance|   50|
+|        Health|   50|
+|cryptocurrency|   50|
+|      Politics|   50|
+|   environment|   50|
++--------------+-----+
+
+Training Dataset Count: 383
+Test Dataset Count: 167
++------------------------------+--------------+------------------------------+-----+----------+
+|                   description|      category|                   probability|label|prediction|
++------------------------------+--------------+------------------------------+-----+----------+
+|Cryptocurrency Live Previou...|cryptocurrency|[1.0,5.637016053152593E-21,...|  0.0|       0.0|
+|A 3D-printed Facebook logo ...|cryptocurrency|[1.0,6.196212677049898E-29,...|  0.0|       0.0|
+|Big-name companies are jump...|cryptocurrency|[0.9999999999999996,4.10683...|  0.0|       0.0|
+|This May 12, 2021, file pho...|cryptocurrency|[0.9999999999999949,5.20072...|  0.0|       0.0|
+|The price of cryptocurrency...|cryptocurrency|[0.9999999999999818,3.36075...|  0.0|       0.0|
+|Cryptocurrency is a unique ...|cryptocurrency|[0.9999999999918521,3.35463...|  0.0|       0.0|
+|DUBLIN, Oct. 19, 2021 /PRNe...|cryptocurrency|[0.9999999999897884,1.74607...|  0.0|       0.0|
+|Another advantage of runnin...|cryptocurrency|[0.9999999984078465,4.69295...|  0.0|       0.0|
+|(Reuters) - Two cryptocurre...|cryptocurrency|[0.9999999964848696,3.11421...|  0.0|       0.0|
+|A cryptocurrency company wa...|cryptocurrency|[0.9999999855695898,1.37196...|  0.0|       0.0|
++------------------------------+--------------+------------------------------+-----+----------+
+only showing top 10 rows
+
++--------------------+--------------+--------------------+--------------------+--------------------+-----+--------------------+--------------------+----------+
+|         description|      category|               words|            filtered|            features|label|       rawPrediction|         probability|prediction|
++--------------------+--------------+--------------------+--------------------+--------------------+-----+--------------------+--------------------+----------+
+|After three years...|     Education|[after, three, ye...|[after, three, ye...|(1031,[0,1,2,3,4,...|  8.0|[-447.21635077096...|[2.75795829976528...|       8.0|
+|A white man trave...|         Crime|[a, white, man, t...|[a, white, man, t...|(1031,[0,1,2,3,4,...|  7.0|[-488.12393692539...|[1.89849713227454...|       7.0|
+|1. WELCOME TO MY ...| Entertainment|[1, welcome, to, ...|[1, welcome, to, ...|(1031,[0,1,2,3,4,...| 10.0|[-597.96533943281...|[1.02986260666079...|       4.0|
+|Dublin, Oct. 20, ...|        Sports|[dublin, oct, 20,...|[dublin, oct, 20,...|(1031,[0,1,2,3,4,...|  2.0|[-585.06943415030...|[1.30761383733307...|       2.0|
+|By Reuters StaffO...|       Finance|[by, reuters, sta...|[by, reuters, sta...|(1031,[0,1,2,3,4,...|  1.0|[-468.40290388910...|[3.45352969840905...|       1.0|
+|1.World Health Or...|        Health|[1, world, health...|[1, world, health...|(1031,[0,1,2,3,4,...|  5.0|[-280.67218032267...|[2.22052283688503...|       5.0|
+|"Why are advertis...|      Religion|[why, are, advert...|[why, are, advert...|(1031,[0,2,3,4,6,...|  9.0|[-378.77495554956...|[3.40834340495830...|       9.0|
+|Accreditation ind...|      Business|[accreditation, i...|[accreditation, i...|(1031,[0,1,2,4,5,...|  4.0|[-272.70377363658...|[3.93662824264882...|       4.0|
+|Aesha Datta
+
+Assi...|   environment|[aesha, datta, as...|[aesha, datta, as...|(1031,[1,2,3,4,7,...|  3.0|[-417.23971377429...|[1.73924329321948...|       3.0|
+|(Reuters) - Two c...|cryptocurrency|[reuters, two, cr...|[reuters, two, cr...|(1031,[0,1,2,3,4,...|  0.0|[-322.67452056965...|[0.99999999648486...|       0.0|
+|AgenciesIt is the...|      Politics|[agenciesit, is, ...|[agenciesit, is, ...|(1031,[0,1,2,4,5,...|  6.0|[-416.12407309684...|[1.38640030651062...|       6.0|
++--------------------+--------------+--------------------+--------------------+--------------------+-----+--------------------+--------------------+----------+
+
+Model accuracy 0.8861469296958392
+
+Process finished with exit code 0
